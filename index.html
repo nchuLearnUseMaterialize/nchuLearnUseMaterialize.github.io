@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Clock</title>
+	<script type="text/javascript">
+		var hh = mm = ss = "00";
+		function clickTime() {
+			var today = new Date();
+			// var today_Year = today.getFullYear();
+			// var today_Month = today.getMonth();
+			// var today_Date = today.getDate();
+			// var today_Day = today.getDay();
+			var today_Hours = today.getHours();
+			var today_Minutes = today.getMinutes();
+			var today_Seconds = today.getSeconds();
+			
+			if (hh != today_Hours) {
+				hh = today_Hours;
+				document.getElementById('HH').innerHTML = hh;
+				console.log("HH");
+			}
+			if (mm != today_Minutes) {
+				mm = today_Minutes;
+				document.getElementById('MM').innerHTML = mm;
+				console.log("MM");
+			}
+			if (ss != today_Seconds) {
+				ss = today_Seconds;
+				document.getElementById('SS').innerHTML = ss;
+				console.log("SS");
+			}
+			
+			setTimeout(clickTime, 500);
+		}
+	</script>
 </head>
-<body>
-	<h1>TEST</h1>
+<body onload="clickTime()">
+	<div id = "clock">
+		<div>
+			<span id="HH">00</span>
+			:
+			<span id="MM">00</span>
+			:
+			<span id="SS">00</span>
+		</div>
+	</div>
 </body>
 </html>

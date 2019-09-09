@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MULTIPLICATION CHART</title>
+	
+	<!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	
+</head>
+<body>
+	<div class="multiplicationChart">
+		<div class="line n1"></div>
+		<div class="chart_title">九九乘法表</div>
+		<div class="chart_title_english">MULTIPLICATION CHART</div>
+		<div class="line n2"> </div>
+
+		<script type="text/javascript">
+
+			for (let i = 2; i < 10; i++) {
+				
+				document.write(`<div class="card" id='card_Id_${i}'></div>`);
+
+				let cardID =  `card_Id_${i}`;
+				let str = `<div class='card_title'>${i}</div>`;
+				
+				for (let j = 1; j < 10; j++) {
+					str += `<div class='item item_${j}'>${i} × ${j} = ${i*j}</div>`;
+					document.getElementById(cardID).innerHTML = str;
+				}
+			
+			}
+			for (let i = 0; i < 4; i++) {
+				document.write(`<div class="point p${i}">×</div>`);
+			}
+		</script>
+
+		<footer>
+			<span class="footerText">Copyright © 2019 HexSchool. All rights reserved.</span>
+		</footer>
+	</div>
+	
+</body>
+</html>
